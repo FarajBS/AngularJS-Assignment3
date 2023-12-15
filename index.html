@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>AngularJS-Assignment3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- =================================================================================================================================== -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="NarrowItDownApp">
+        <div class="title container">
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+        </div>
+        <div class="container" ng-controller="NarrowItDownController as narrow">
+        <input ng-model="narrow.searchMenu" type="text" placeholder="search term" class="form-control">
+        <button class="btn btn-primary" ng-click="narrow.getItems(narrow.searchMenu)">Narrow It Down For Me!</button>
+        <found-items found="narrow.found" titles="narrow.titles" remove="narrow.removeMenuItem(index)"></found-items>
+        <div class="error" ng-show="narrow.searched">
+            No matching items found.
+        </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
